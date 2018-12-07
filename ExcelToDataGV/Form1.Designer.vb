@@ -25,6 +25,7 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dtExcel = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -45,7 +46,6 @@ Partial Class Form1
         Me.dtExcel.RowTemplate.Height = 24
         Me.dtExcel.Size = New System.Drawing.Size(1379, 595)
         Me.dtExcel.TabIndex = 1
-        Me.dtExcel.Visible = False
         '
         'Button2
         '
@@ -56,11 +56,21 @@ Partial Class Form1
         Me.Button2.Text = "Guardar Datos"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(1141, 12)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(250, 38)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Ver el DataTable"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1403, 667)
+        Me.ClientSize = New System.Drawing.Size(1703, 1055)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.dtExcel)
         Me.Controls.Add(Me.Button1)
@@ -74,4 +84,5 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents dtExcel As DataGridView
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

@@ -21,5 +21,18 @@ Public Class conexion
 
     End Sub
 
+    Public Shared Function getCampos() As DataTable
+        Dim con As MySqlConnection = conexion.conection()
+        Dim dt As DataTable = New DataTable()
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("SELECT nombre, departamento, diasTrabajados,sueldo,otrasPercepciones,compensasion,destajos, destajo, comisiones, vacacionesTiempo, vacacionesReportadas, comisionSeminuevos, comisionUsados, comisionAltaGama, comisionProshop, comisionSicrea, comisionRefacciones, comisionServicio, comisionHyP, bonificacion FROM compautos_nomina"), con)
+        Dim adap As New MySqlDataAdapter(cmd)
+        adap.Fill(dt)
+        con.Close()
+
+        Return dt
+
+
+    End Function
+
 
 End Class
