@@ -26,6 +26,7 @@ Partial Class Form1
         Me.dtExcel = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,11 +66,21 @@ Partial Class Form1
         Me.Button3.Text = "Ver el DataTable"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(1397, 54)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(294, 35)
+        Me.Button4.TabIndex = 4
+        Me.Button4.Text = "Obtener Promedio"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1703, 1055)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.dtExcel)
@@ -85,4 +96,5 @@ Partial Class Form1
     Friend WithEvents dtExcel As DataGridView
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class

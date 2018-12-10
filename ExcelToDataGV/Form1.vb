@@ -39,7 +39,6 @@ Public Class Form1
         Try
             Dim a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51, a52, a53 As String
             For i As Integer = 0 To dtExcel.Rows.Count Step +1
-
                 a1 = dtExcel.Rows(i).Cells(0).Value.ToString()
                 a2 = dtExcel.Rows(i).Cells(1).Value.ToString()
                 a3 = dtExcel.Rows(i).Cells(2).Value.ToString()
@@ -93,45 +92,45 @@ Public Class Form1
                 a51 = dtExcel.Rows(i).Cells(50).Value.ToString()
                 a52 = dtExcel.Rows(i).Cells(51).Value.ToString()
                 a53 = dtExcel.Rows(i).Cells(52).Value.ToString()
-
                 conexion.addvalue(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51, a52, a53)
-
-
             Next
             MsgBox("Everithing will be alright")
-
-
         Catch ex As Exception
             MsgBox(ex.Message)
-
         End Try
-
-
-
-
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         dtExcel.DataSource = conexion.getCampos()
         conexion.getCampos()
         Dim dato As String
-        Dim suma As Double
         For i As Integer = 0 To conexion.getCampos.Rows.Count Step +1
-
             For o As Integer = 3 To conexion.getCampos.Columns.Count - 2 Step +1
-
-
-
-                For y As Integer = 3 To 18 Step +1
-                    dato = conexion.getCampos.Rows(i)(o).ToString
-                    suma += Double.Parse(dato)
-                Next
-
-                MsgBox(suma.ToString)
+                dato = conexion.getCampos.Rows(i)(o).ToString
+                MsgBox(dato.ToString)
             Next
-
         Next
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        conexion.getDiasSuma()
+        Dim newDt As New DataTable
+        Dim newColumn As New Data.DataColumn("Promedio", GetType(System.String))
+        newDt = conexion.getDiasSuma().Copy()
+        newDt.Columns.Add(newColumn)
+        Dim prom, suma, dia As String
+        Dim contador As Integer = 0
+        While contador < newDt.Rows.Count
+            suma = newDt(contador)(3)
+            dia = newDt(contador)(2)
+            prom = (Double.Parse(suma) / Double.Parse(dia)).ToString()
+            newDt.Rows(contador)("Promedio") = prom
+            contador = contador + 1
 
 
+        End While
+
+
+        dtExcel.DataSource = newDt
     End Sub
 End Class
