@@ -62,7 +62,7 @@ Partial Class Form1
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(250, 38)
         Me.Button3.TabIndex = 3
-        Me.Button3.Text = "Ver el DataTable"
+        Me.Button3.Text = "Calcular Promedio"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Form1

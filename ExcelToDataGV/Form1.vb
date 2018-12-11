@@ -9,7 +9,7 @@ Public Class Form1
     Dim datos As DataSet
     Dim excel As String
     Dim openFile As New OpenFileDialog
-
+    'Mostrar el Excel en el dataGrid
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
             openFile.InitialDirectory = "C:\Users\Abisai\Downloads"
@@ -19,27 +19,24 @@ Public Class Form1
                 Dim FileName As String = openFile.FileName
                 excel = fi.FullName
                 conn = New OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + excel + ";Extended Properties=Excel 12.0;")
-                data = New OleDbDataAdapter("select * from [Hoja2$]", conn)
+                data = New OleDbDataAdapter("select * from [Hoja1$]", conn)
                 datos = New DataSet
-                data.Fill(datos, "[Hoja2$]")
+                data.Fill(datos, "[Hoja1$]")
                 dtExcel.DataSource = datos
-                dtExcel.DataMember = "[Hoja2$]"
+                dtExcel.DataMember = "[Hoja1$]"
                 conn.Close()
                 MsgBox("Archivo Cargado Correctamente")
-
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
             conn.Close()
-
         End Try
     End Sub
-
+    'Insertar el archivo de Excel en la Base de datos
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            Dim a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51, a52, a53 As String
+            Dim a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51 As String
             For i As Integer = 0 To dtExcel.Rows.Count Step +1
-
                 a1 = dtExcel.Rows(i).Cells(0).Value.ToString()
                 a2 = dtExcel.Rows(i).Cells(1).Value.ToString()
                 a3 = dtExcel.Rows(i).Cells(2).Value.ToString()
@@ -91,47 +88,35 @@ Public Class Form1
                 a49 = dtExcel.Rows(i).Cells(48).Value.ToString()
                 a50 = dtExcel.Rows(i).Cells(49).Value.ToString()
                 a51 = dtExcel.Rows(i).Cells(50).Value.ToString()
-                a52 = dtExcel.Rows(i).Cells(51).Value.ToString()
-                a53 = dtExcel.Rows(i).Cells(52).Value.ToString()
-
-                conexion.addvalue(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51, a52, a53)
-
-
+                conexion.addvalue(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51)
             Next
             MsgBox("Everithing will be alright")
-
-
         Catch ex As Exception
             MsgBox(ex.Message)
-
         End Try
-
-
-
-
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        dtExcel.DataSource = conexion.getCampos()
-        conexion.getCampos()
-        Dim dato As String
-        Dim suma As Double
-        For i As Integer = 0 To conexion.getCampos.Rows.Count Step +1
-
-            For o As Integer = 3 To conexion.getCampos.Columns.Count - 2 Step +1
-
-
-
-                For y As Integer = 3 To 18 Step +1
-                    dato = conexion.getCampos.Rows(i)(o).ToString
-                    suma += Double.Parse(dato)
-                Next
-
-                MsgBox(suma.ToString)
-            Next
-
+        Dim newDt As New DataTable
+        Dim ColSuma As New Data.DataColumn("Suma", GetType(System.String))
+        Dim ColProm As New Data.DataColumn("Promedio", GetType(System.String))
+        newDt = conexion.getCampos.Copy()
+        Dim contador As Integer = 0
+        Dim suma As Double = 0
+        newDt.Columns.Add(ColSuma)
+        newDt.Columns.Add(ColProm)
+        For i As Integer = 0 To newDt.Rows.Count - 1 Step +1
+            contador = 3
+            dtExcel.DataSource = newDt
+            While contador < newDt.Columns.Count - 2
+                suma = suma + Double.Parse(newDt(i)(contador))
+                contador = contador + 1
+            End While
+            newDt.Rows(i)("Suma") = suma
+            newDt.Rows(i)("Promedio") = Math.Round(suma / Double.Parse(conexion.getCampos(i)(2)), 2)
+            suma = 0
+            contador = 0
         Next
-
-
+        dtExcel.DataSource = newDt
     End Sub
 End Class
