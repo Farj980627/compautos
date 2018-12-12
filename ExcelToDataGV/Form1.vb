@@ -96,7 +96,16 @@ Public Class Form1
         End Try
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim ci As New Globalization.CultureInfo("en-US")
+        Application.CurrentCulture = ci
+        Me.Location = Screen.PrimaryScreen.WorkingArea.Location
+        Me.Size = Screen.PrimaryScreen.WorkingArea.Size
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
         Dim newDt As New DataTable
         Dim ColSuma As New Data.DataColumn("Suma", GetType(System.String))
         Dim ColProm As New Data.DataColumn("Promedio", GetType(System.String))
@@ -106,17 +115,20 @@ Public Class Form1
         newDt.Columns.Add(ColSuma)
         newDt.Columns.Add(ColProm)
         For i As Integer = 0 To newDt.Rows.Count - 1 Step +1
-            contador = 3
+            contador = 5
             dtExcel.DataSource = newDt
             While contador < newDt.Columns.Count - 2
                 suma = suma + Double.Parse(newDt(i)(contador))
                 contador = contador + 1
             End While
             newDt.Rows(i)("Suma") = suma
-            newDt.Rows(i)("Promedio") = Math.Round(suma / Double.Parse(conexion.getCampos(i)(2)), 2)
+            newDt.Rows(i)("Promedio") = Math.Round(suma / Double.Parse(conexion.getCampos(i)(4)), 2)
             suma = 0
             contador = 0
         Next
         dtExcel.DataSource = newDt
+        dtExcel.Columns("Suma").DisplayIndex = 5
+        dtExcel.Columns("Promedio").DisplayIndex = 6
+        dtExcel.Columns(5).DefaultCellStyle.Alignment = DataGridViewContentAlignment.BottomCenter
     End Sub
 End Class
