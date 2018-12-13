@@ -9,6 +9,7 @@ Public Class Form1
     Dim datos As DataSet
     Dim excel As String
     Dim openFile As New OpenFileDialog
+    Public Shared mesInicio, mesFin, yearInicio, yearFinal As String
     'Mostrar el Excel en el dataGrid
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
@@ -31,6 +32,39 @@ Public Class Form1
             MsgBox(ex.Message)
             conn.Close()
         End Try
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Dim detener As Boolean = False
+        For w As Integer = 0 To cbMesInicial.SelectedIndex Step +1
+            mesInicio = "0" & w + 1
+            If w >= 9 Then
+                mesInicio = w + 1
+            End If
+        Next
+        For k As Integer = 0 To cbMesFinal.SelectedIndex Step +1
+            mesFin = "0" & k + 1
+            If k >= 9 Then
+                mesFin = k + 1
+            End If
+        Next
+        yearInicio = cbAñoInicial.Text
+        yearFinal = cbAñoFinal.Text
+        Dim contador, contador2 As Integer
+        contador = mesInicio
+        contador2 = yearInicio
+        While detener = False
+            'hacer el select aqui
+            If contador = 13 Then
+                contador = 1
+                contador2 = contador2 + 1
+            End If
+            If contador = mesFin And contador2 = yearFinal Then
+                detener = True
+            End If
+            MsgBox("Mes numero: " & contador & " " & "Año numero: " & contador2)
+            contador = contador + 1
+        End While
     End Sub
     'Insertar el archivo de Excel en la Base de datos
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -95,17 +129,25 @@ Public Class Form1
             MsgBox(ex.Message)
         End Try
     End Sub
-
-
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim ci As New Globalization.CultureInfo("en-US")
-        Application.CurrentCulture = ci
         Me.Location = Screen.PrimaryScreen.WorkingArea.Location
         Me.Size = Screen.PrimaryScreen.WorkingArea.Size
     End Sub
-
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        For w As Integer = 0 To cbMesInicial.SelectedIndex Step +1
+            mesInicio = "0" & w + 1
+            If w >= 9 Then
+                mesInicio = w + 1
+            End If
+        Next
+        For k As Integer = 0 To cbMesFinal.SelectedIndex Step +1
+            mesFin = "0" & k + 1
+            If k >= 9 Then
+                mesFin = k + 1
+            End If
+        Next
+        yearInicio = cbAñoInicial.Text
+        yearFinal = cbAñoFinal.Text
         Dim newDt As New DataTable
         Dim ColSuma As New Data.DataColumn("Suma", GetType(System.String))
         Dim ColProm As New Data.DataColumn("Promedio", GetType(System.String))
@@ -114,6 +156,7 @@ Public Class Form1
         Dim suma As Double = 0
         newDt.Columns.Add(ColSuma)
         newDt.Columns.Add(ColProm)
+
         For i As Integer = 0 To newDt.Rows.Count - 1 Step +1
             contador = 5
             dtExcel.DataSource = newDt

@@ -22,20 +22,21 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dtExcel = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.cbMesInicial = New System.Windows.Forms.ComboBox()
-        Me.cbAñoInicial = New System.Windows.Forms.ComboBox()
-        Me.cbMesFinal = New System.Windows.Forms.ComboBox()
         Me.cbAñoFinal = New System.Windows.Forms.ComboBox()
+        Me.cbMesFinal = New System.Windows.Forms.ComboBox()
+        Me.cbAñoInicial = New System.Windows.Forms.ComboBox()
+        Me.cbMesInicial = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
@@ -54,30 +55,30 @@ Partial Class Form1
         '
         Me.dtExcel.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.dtExcel.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Lucida Calligraphy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Red
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtExcel.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Lucida Calligraphy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtExcel.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.dtExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtExcel.Location = New System.Drawing.Point(12, 54)
         Me.dtExcel.Name = "dtExcel"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Lucida Calligraphy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtExcel.RowHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Lucida Calligraphy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtExcel.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.dtExcel.RowHeadersVisible = False
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
-        Me.dtExcel.RowsDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
+        Me.dtExcel.RowsDefaultCellStyle = DataGridViewCellStyle9
         Me.dtExcel.RowTemplate.Height = 24
         Me.dtExcel.Size = New System.Drawing.Size(1679, 784)
         Me.dtExcel.TabIndex = 1
@@ -114,29 +115,17 @@ Partial Class Form1
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(832, 31)
         Me.TableLayoutPanel1.TabIndex = 4
         '
-        'cbMesInicial
+        'cbAñoFinal
         '
-        Me.cbMesInicial.BackColor = System.Drawing.Color.White
-        Me.cbMesInicial.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbMesInicial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cbMesInicial.FormattingEnabled = True
-        Me.cbMesInicial.Items.AddRange(New Object() {"Enero" & Global.Microsoft.VisualBasic.ChrW(9), "Febrero" & Global.Microsoft.VisualBasic.ChrW(9), "Marzo", "Abril", "Mayo" & Global.Microsoft.VisualBasic.ChrW(9), "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.cbMesInicial.Location = New System.Drawing.Point(141, 3)
-        Me.cbMesInicial.Name = "cbMesInicial"
-        Me.cbMesInicial.Size = New System.Drawing.Size(132, 31)
-        Me.cbMesInicial.TabIndex = 0
-        '
-        'cbAñoInicial
-        '
-        Me.cbAñoInicial.BackColor = System.Drawing.Color.White
-        Me.cbAñoInicial.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAñoInicial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cbAñoInicial.FormattingEnabled = True
-        Me.cbAñoInicial.Items.AddRange(New Object() {"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"})
-        Me.cbAñoInicial.Location = New System.Drawing.Point(279, 3)
-        Me.cbAñoInicial.Name = "cbAñoInicial"
-        Me.cbAñoInicial.Size = New System.Drawing.Size(132, 31)
-        Me.cbAñoInicial.TabIndex = 1
+        Me.cbAñoFinal.BackColor = System.Drawing.Color.White
+        Me.cbAñoFinal.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAñoFinal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.cbAñoFinal.FormattingEnabled = True
+        Me.cbAñoFinal.Items.AddRange(New Object() {"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"})
+        Me.cbAñoFinal.Location = New System.Drawing.Point(693, 3)
+        Me.cbAñoFinal.Name = "cbAñoFinal"
+        Me.cbAñoFinal.Size = New System.Drawing.Size(136, 31)
+        Me.cbAñoFinal.TabIndex = 3
         '
         'cbMesFinal
         '
@@ -150,17 +139,29 @@ Partial Class Form1
         Me.cbMesFinal.Size = New System.Drawing.Size(132, 31)
         Me.cbMesFinal.TabIndex = 2
         '
-        'cbAñoFinal
+        'cbAñoInicial
         '
-        Me.cbAñoFinal.BackColor = System.Drawing.Color.White
-        Me.cbAñoFinal.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbAñoFinal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.cbAñoFinal.FormattingEnabled = True
-        Me.cbAñoFinal.Items.AddRange(New Object() {"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019"})
-        Me.cbAñoFinal.Location = New System.Drawing.Point(693, 3)
-        Me.cbAñoFinal.Name = "cbAñoFinal"
-        Me.cbAñoFinal.Size = New System.Drawing.Size(136, 31)
-        Me.cbAñoFinal.TabIndex = 3
+        Me.cbAñoInicial.BackColor = System.Drawing.Color.White
+        Me.cbAñoInicial.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbAñoInicial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.cbAñoInicial.FormattingEnabled = True
+        Me.cbAñoInicial.Items.AddRange(New Object() {"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"})
+        Me.cbAñoInicial.Location = New System.Drawing.Point(279, 3)
+        Me.cbAñoInicial.Name = "cbAñoInicial"
+        Me.cbAñoInicial.Size = New System.Drawing.Size(132, 31)
+        Me.cbAñoInicial.TabIndex = 1
+        '
+        'cbMesInicial
+        '
+        Me.cbMesInicial.BackColor = System.Drawing.Color.White
+        Me.cbMesInicial.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbMesInicial.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.cbMesInicial.FormattingEnabled = True
+        Me.cbMesInicial.Items.AddRange(New Object() {"Enero" & Global.Microsoft.VisualBasic.ChrW(9), "Febrero" & Global.Microsoft.VisualBasic.ChrW(9), "Marzo", "Abril", "Mayo" & Global.Microsoft.VisualBasic.ChrW(9), "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.cbMesInicial.Location = New System.Drawing.Point(141, 3)
+        Me.cbMesInicial.Name = "cbMesInicial"
+        Me.cbMesInicial.Size = New System.Drawing.Size(132, 31)
+        Me.cbMesInicial.TabIndex = 0
         '
         'Label1
         '
@@ -196,12 +197,23 @@ Partial Class Form1
         Me.Button3.Text = "Calcular Promedio"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(1167, 861)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(250, 38)
+        Me.Button4.TabIndex = 6
+        Me.Button4.Text = "Para probar cosas"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1703, 922)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Button2)
@@ -227,4 +239,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
 End Class
