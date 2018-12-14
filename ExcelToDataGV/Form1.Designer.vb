@@ -22,9 +22,9 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.dtExcel = New System.Windows.Forms.DataGridView()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -36,9 +36,22 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.cbNombre = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.lblPromedio = New System.Windows.Forms.Label()
+        Me.lblDias = New System.Windows.Forms.Label()
+        Me.lblPercepciones = New System.Windows.Forms.Label()
+        Me.lblPeriodos = New System.Windows.Forms.Label()
+        Me.lblNombre = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lblCodigo = New System.Windows.Forms.Label()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
+        Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Button1
@@ -55,30 +68,30 @@ Partial Class Form1
         '
         Me.dtExcel.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.dtExcel.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Lucida Calligraphy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtExcel.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Lucida Calligraphy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtExcel.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dtExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtExcel.Location = New System.Drawing.Point(12, 54)
+        Me.dtExcel.Location = New System.Drawing.Point(24, 54)
         Me.dtExcel.Name = "dtExcel"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Lucida Calligraphy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dtExcel.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Lucida Calligraphy", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dtExcel.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dtExcel.RowHeadersVisible = False
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.White
-        Me.dtExcel.RowsDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.White
+        Me.dtExcel.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dtExcel.RowTemplate.Height = 24
         Me.dtExcel.Size = New System.Drawing.Size(1679, 784)
         Me.dtExcel.TabIndex = 1
@@ -108,7 +121,7 @@ Partial Class Form1
         Me.TableLayoutPanel1.Controls.Add(Me.cbMesInicial, 1, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label1, 0, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.Label2, 3, 0)
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 863)
+        Me.TableLayoutPanel1.Location = New System.Drawing.Point(12, 895)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
         Me.TableLayoutPanel1.RowCount = 1
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -190,30 +203,194 @@ Partial Class Form1
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(850, 861)
+        Me.Button3.Location = New System.Drawing.Point(850, 895)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(250, 38)
         Me.Button3.TabIndex = 5
         Me.Button3.Text = "Calcular Promedio"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'Button4
+        'cbNombre
         '
-        Me.Button4.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.Location = New System.Drawing.Point(1167, 861)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(250, 38)
-        Me.Button4.TabIndex = 6
-        Me.Button4.Text = "Para probar cosas"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.cbNombre.BackColor = System.Drawing.Color.White
+        Me.cbNombre.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbNombre.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.cbNombre.FormattingEnabled = True
+        Me.cbNombre.Items.AddRange(New Object() {"Enero" & Global.Microsoft.VisualBasic.ChrW(9), "Febrero" & Global.Microsoft.VisualBasic.ChrW(9), "Marzo", "Abril", "Mayo" & Global.Microsoft.VisualBasic.ChrW(9), "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.cbNombre.Location = New System.Drawing.Point(291, 858)
+        Me.cbNombre.Name = "cbNombre"
+        Me.cbNombre.Size = New System.Drawing.Size(408, 31)
+        Me.cbNombre.TabIndex = 6
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(183, 861)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(102, 23)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Nombre: "
+        '
+        'TableLayoutPanel2
+        '
+        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.lblPromedio, 1, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblDias, 1, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblPercepciones, 1, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblPeriodos, 1, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblNombre, 1, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label5, 0, 1)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label6, 0, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label7, 0, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label8, 0, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.lblCodigo, 0, 0)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(319, 168)
+        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
+        Me.TableLayoutPanel2.RowCount = 5
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.TableLayoutPanel2.Size = New System.Drawing.Size(994, 292)
+        Me.TableLayoutPanel2.TabIndex = 8
+        '
+        'lblPromedio
+        '
+        Me.lblPromedio.AutoSize = True
+        Me.lblPromedio.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPromedio.ForeColor = System.Drawing.Color.White
+        Me.lblPromedio.Location = New System.Drawing.Point(350, 232)
+        Me.lblPromedio.Name = "lblPromedio"
+        Me.lblPromedio.Size = New System.Drawing.Size(264, 34)
+        Me.lblPromedio.TabIndex = 19
+        Me.lblPromedio.Text = "PromedioSalario"
+        Me.lblPromedio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblDias
+        '
+        Me.lblDias.AutoSize = True
+        Me.lblDias.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDias.ForeColor = System.Drawing.Color.White
+        Me.lblDias.Location = New System.Drawing.Point(350, 174)
+        Me.lblDias.Name = "lblDias"
+        Me.lblDias.Size = New System.Drawing.Size(151, 34)
+        Me.lblDias.TabIndex = 18
+        Me.lblDias.Text = "totalDias"
+        Me.lblDias.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblPercepciones
+        '
+        Me.lblPercepciones.AutoSize = True
+        Me.lblPercepciones.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPercepciones.ForeColor = System.Drawing.Color.White
+        Me.lblPercepciones.Location = New System.Drawing.Point(350, 116)
+        Me.lblPercepciones.Name = "lblPercepciones"
+        Me.lblPercepciones.Size = New System.Drawing.Size(284, 34)
+        Me.lblPercepciones.TabIndex = 17
+        Me.lblPercepciones.Text = "totalPercepciones"
+        Me.lblPercepciones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblPeriodos
+        '
+        Me.lblPeriodos.AutoSize = True
+        Me.lblPeriodos.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblPeriodos.ForeColor = System.Drawing.Color.White
+        Me.lblPeriodos.Location = New System.Drawing.Point(350, 58)
+        Me.lblPeriodos.Name = "lblPeriodos"
+        Me.lblPeriodos.Size = New System.Drawing.Size(147, 34)
+        Me.lblPeriodos.TabIndex = 16
+        Me.lblPeriodos.Text = "Periodos"
+        Me.lblPeriodos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblNombre
+        '
+        Me.lblNombre.AutoSize = True
+        Me.lblNombre.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNombre.ForeColor = System.Drawing.Color.White
+        Me.lblNombre.Location = New System.Drawing.Point(350, 0)
+        Me.lblNombre.Name = "lblNombre"
+        Me.lblNombre.Size = New System.Drawing.Size(136, 34)
+        Me.lblNombre.TabIndex = 15
+        Me.lblNombre.Text = "Nombre"
+        Me.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(3, 58)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(140, 34)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "Periodo:"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(3, 116)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(311, 34)
+        Me.Label6.TabIndex = 12
+        Me.Label6.Text = "Total Percepciones:"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(3, 174)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(178, 34)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "Total Dias:"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(3, 232)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(291, 34)
+        Me.Label8.TabIndex = 14
+        Me.Label8.Text = "Salario Promedio: "
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblCodigo
+        '
+        Me.lblCodigo.AutoSize = True
+        Me.lblCodigo.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCodigo.ForeColor = System.Drawing.Color.White
+        Me.lblCodigo.Location = New System.Drawing.Point(3, 0)
+        Me.lblCodigo.Name = "lblCodigo"
+        Me.lblCodigo.Size = New System.Drawing.Size(131, 34)
+        Me.lblCodigo.TabIndex = 10
+        Me.lblCodigo.Text = "Codigo "
+        Me.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1703, 922)
-        Me.Controls.Add(Me.Button4)
+        Me.ClientSize = New System.Drawing.Size(1703, 957)
+        Me.Controls.Add(Me.TableLayoutPanel2)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.cbNombre)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.Controls.Add(Me.Button2)
@@ -224,7 +401,10 @@ Partial Class Form1
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.TableLayoutPanel1.PerformLayout()
+        Me.TableLayoutPanel2.ResumeLayout(False)
+        Me.TableLayoutPanel2.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -236,8 +416,20 @@ Partial Class Form1
     Friend WithEvents cbMesInicial As ComboBox
     Friend WithEvents cbMesFinal As ComboBox
     Friend WithEvents cbAñoFinal As ComboBox
+    Friend WithEvents Button3 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents cbNombre As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents lblPromedio As Label
+    Friend WithEvents lblDias As Label
+    Friend WithEvents lblPercepciones As Label
+    Friend WithEvents lblPeriodos As Label
+    Friend WithEvents lblNombre As Label
+    Friend WithEvents lblCodigo As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
 End Class

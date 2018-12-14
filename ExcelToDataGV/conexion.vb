@@ -20,6 +20,16 @@ Public Class conexion
         con.Close()
     End Sub
 
+    Public Shared Function getNombres() As DataTable
+        Dim con As MySqlConnection = conexion.conection()
+        Dim dt As New DataTable()
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("Select distinct nombre from compautos_nomina"), con)
+        Dim adap As New MySqlDataAdapter(cmd)
+        adap.Fill(dt)
+        con.Close()
+        Return dt
+    End Function
+
     Public Shared Function getCampos() As DataTable
         Dim con As MySqlConnection = conexion.conection()
         Dim dt As DataTable = New DataTable()
@@ -27,8 +37,10 @@ Public Class conexion
         Dim contador, contador2 As Integer
         Dim mesActual As String = ""
         Dim periodoActual As String = ""
+        Dim nombre As String = ""
         contador = Form1.mesInicio
         contador2 = Form1.yearInicio
+        nombre = Form1.nombre
         While detener = False
             If contador = 13 Then
                 contador = 1
@@ -46,7 +58,7 @@ Public Class conexion
                 diasTrabajados,sueldo,otrasPercepciones,compensasion,destajos, destajo, comisiones, vacacionesTiempo,
                 vacacionesReportadas, comisionSeminuevos, comisionUsados, comisionAltaGama, comisionProshop, comisionSicrea,
                 comisionRefacciones, comisionServicio, comisionHyP, bonificacion FROM compautos_nomina
-                where periodo='" + periodoActual + "'"), con)
+                where periodo='" + periodoActual + "' and nombre = '" + nombre + "'"), con)
             Dim adap As New MySqlDataAdapter(cmd)
             adap.Fill(dt)
             contador = contador + 1
