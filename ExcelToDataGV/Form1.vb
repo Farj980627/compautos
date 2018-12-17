@@ -1,34 +1,18 @@
 ﻿Imports System.Data.OleDb
 Imports MySql.Data.MySqlClient
-
-
-Public Class Form1
+Public Class Compautos
     Dim dbconect As conexion
     Dim conn As OleDbConnection
     Dim data As OleDbDataAdapter
     Dim datos As DataSet
     Dim excel As String
     Dim openFile As New OpenFileDialog
-    Public Shared mesInicio, mesFin, yearInicio, yearFinal, nombre As String
-
-    Private Sub cbAñoFinal_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbAñoFinal.SelectedIndexChanged
-        If cbAñoFinal.SelectedIndex < cbAñoInicial.SelectedIndex Then
-            MsgBox("El año final es menor que el año inicial")
-            Button3.Enabled = False
-        Else
-            Button3.Enabled = True
-        End If
-        If cbAñoFinal.SelectedIndex = cbAñoInicial.SelectedIndex And cbMesFinal.SelectedIndex < cbMesInicial.SelectedIndex Then
-            MsgBox("El mes final es menor que el inicial")
-            Button3.Enabled = False
-        Else
-            Button3.Enabled = True
-        End If
-    End Sub
+    Public Shared mesInicio, mesFin, yearInicio, yearFinal, nombre, periodo As String
 
     'Mostrar el Excel en el dataGrid
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
+
             openFile.InitialDirectory = "C:\Users\Abisai\Downloads"
             openFile.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm"
             If openFile.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK Then
@@ -42,9 +26,13 @@ Public Class Form1
                 dtExcel.DataSource = datos
                 dtExcel.DataMember = "[Hoja1$]"
                 conn.Close()
+                If dtExcel.Visible = False Then
+                    dtExcel.Visible = True
+                    TableLayoutPanel2.Visible = False
+                End If
                 MsgBox("Archivo Cargado Correctamente")
-            End If
 
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
             conn.Close()
@@ -56,6 +44,8 @@ Public Class Form1
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
             Dim a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51 As String
+            'periodo = dtExcel.Rows(1).Cells(0).Value.ToString
+
             For i As Integer = 0 To dtExcel.Rows.Count - 2 Step +1
                 a1 = dtExcel.Rows(i).Cells(0).Value.ToString()
                 a2 = dtExcel.Rows(i).Cells(1).Value.ToString()
@@ -127,62 +117,69 @@ Public Class Form1
     'Guardar el intervalo de periodos
     Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
         Try
-            nombre = cbNombre.Text
-            For w As Integer = 0 To cbMesInicial.SelectedIndex Step +1
-                mesInicio = "0" & w + 1
-                If w >= 9 Then
-                    mesInicio = w + 1
-                End If
-            Next
-            For k As Integer = 0 To cbMesFinal.SelectedIndex Step +1
-                mesFin = "0" & k + 1
-                If k >= 9 Then
-                    mesFin = k + 1
-                End If
-            Next
-            yearInicio = cbAñoInicial.Text
-            yearFinal = cbAñoFinal.Text
-            Dim newDt As New DataTable
-            Dim ColSuma As New Data.DataColumn("Suma", GetType(System.String))
-            Dim ColProm As New Data.DataColumn("Promedio", GetType(System.String))
-            newDt = conexion.getCampos.Copy()
-            Dim contador As Integer = 0
-            Dim suma As Double = 0
-            Dim sumaTotal As Double = 0
-            Dim diasTotales As Double = 0
-            Dim promFinal As Double = 0
-            newDt.Columns.Add(ColSuma)
-            newDt.Columns.Add(ColProm)
-            For i As Integer = 0 To newDt.Rows.Count - 1 Step +1
-                contador = 5
-                dtExcel.DataSource = newDt
-                While contador < newDt.Columns.Count - 2
-                    suma = suma + Double.Parse(newDt(i)(contador))
-                    contador = contador + 1
-                End While
-                newDt.Rows(i)("Suma") = suma
-                newDt.Rows(i)("Promedio") = Math.Round(suma / Double.Parse(conexion.getCampos(i)(4)), 2)
-                suma = 0
-                contador = 0
-            Next
-            dtExcel.Columns("Suma").DisplayIndex = 5
-            dtExcel.Columns("Promedio").DisplayIndex = 6
-            For k As Integer = 0 To newDt.Rows.Count - 1 Step +1
-                sumaTotal = sumaTotal + newDt(k)("Suma")
-                diasTotales = diasTotales + newDt(k)("diasTrabajados")
-            Next
-            promFinal = Math.Round(sumaTotal / diasTotales, 2)
-            lblCodigo.Text = newDt(0)("codigo")
-            lblNombre.Text = cbNombre.Text
-            lblPeriodos.Text = cbMesInicial.Text & cbAñoInicial.Text & "-" & cbMesFinal.Text & cbAñoFinal.Text
-            lblPercepciones.Text = "$" & " " & sumaTotal
-            lblDias.Text = diasTotales & " " & "Dias"
-            lblPromedio.Text = "$" & " " & promFinal
-            dtExcel.Hide()
-            TableLayoutPanel2.Show()
+            If cbAñoFinal.SelectedIndex < cbAñoInicial.SelectedIndex Then
+                MsgBox("El año final es menor que el año inicial.")
+            ElseIf cbAñoFinal.SelectedIndex = cbAñoInicial.SelectedIndex And cbMesFinal.SelectedIndex < cbMesInicial.SelectedIndex Then
+                MsgBox("El mes final es menor que el inicial. ")
+            ElseIf cbMesInicial.Text = "" Or cbAñoInicial.Text = "" Or cbMesFinal.Text = "" Or cbAñoFinal.Text = "" Then
+                MsgBox("Faltan datos para realizar la busqueda ")
+            Else
+                nombre = cbNombre.Text
+                For w As Integer = 0 To cbMesInicial.SelectedIndex Step +1
+                    mesInicio = "0" & w + 1
+                    If w >= 9 Then
+                        mesInicio = w + 1
+                    End If
+                Next
+                For k As Integer = 0 To cbMesFinal.SelectedIndex Step +1
+                    mesFin = "0" & k + 1
+                    If k >= 9 Then
+                        mesFin = k + 1
+                    End If
+                Next
+                yearInicio = cbAñoInicial.Text
+                yearFinal = cbAñoFinal.Text
+                Dim newDt As New DataTable
+                Dim ColSuma As New Data.DataColumn("Suma", GetType(System.String))
+                Dim ColProm As New Data.DataColumn("Promedio", GetType(System.String))
+                newDt = conexion.getCampos.Copy()
+                Dim contador As Integer = 0
+                Dim suma As Double = 0
+                Dim sumaTotal As Double = 0
+                Dim diasTotales As Double = 0
+                Dim promFinal As Double = 0
+                newDt.Columns.Add(ColSuma)
+                newDt.Columns.Add(ColProm)
+                For i As Integer = 0 To newDt.Rows.Count - 1 Step +1
+                    contador = 5
+                    dtExcel.DataSource = newDt
+                    While contador < newDt.Columns.Count - 2
+                        suma = suma + Double.Parse(newDt(i)(contador))
+                        contador = contador + 1
+                    End While
+                    newDt.Rows(i)("Suma") = suma
+                    newDt.Rows(i)("Promedio") = Math.Round(suma / Double.Parse(conexion.getCampos(i)(4)), 2)
+                    suma = 0
+                    contador = 0
+                Next
+                dtExcel.Columns("Suma").DisplayIndex = 5
+                dtExcel.Columns("Promedio").DisplayIndex = 6
+                For k As Integer = 0 To newDt.Rows.Count - 1 Step +1
+                    sumaTotal = sumaTotal + newDt(k)("Suma")
+                    diasTotales = diasTotales + newDt(k)("diasTrabajados")
+                Next
+                promFinal = Math.Round(sumaTotal / diasTotales, 2)
+                lblCodigo.Text = newDt(0)("codigo")
+                lblNombre.Text = cbNombre.Text
+                lblPeriodos.Text = cbMesInicial.Text & cbAñoInicial.Text & " a " & cbMesFinal.Text & cbAñoFinal.Text
+                lblPercepciones.Text = Format(sumaTotal, "$ ##,##0.00")
+                lblDias.Text = diasTotales & " " & "Dias"
+                lblPromedio.Text = Format(promFinal, "$ ##,##0.00")
+                dtExcel.Hide()
+                TableLayoutPanel2.Show()
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
 End Class

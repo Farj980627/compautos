@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ExcelToDataGV.Form1
+            Me.MainForm = Global.ExcelToDataGV.Compautos
         End Sub
     End Class
 End Namespace
