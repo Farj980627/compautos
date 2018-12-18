@@ -19,11 +19,25 @@ Public Class conexion
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
-    ' Public Shared Sub comparar(pperiodo)
-    'Dim con As MySqlConnection = conexion.conection()
-    'Dim cmd As MySqlCommand = New MySqlCommand(String.Format("select distinct periodo from compautos_nomina"), con)
-
-    'End Sub
+    Public Shared Function comparar(pperiodo) As Boolean
+        Dim con As MySqlConnection = conexion.conection()
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("select distinct periodo from compautos_nomina"), con)
+        Dim dt As New DataTable
+        Dim adap As New MySqlDataAdapter(cmd)
+        adap.Fill(dt)
+        Dim saber As Boolean = False
+        Dim compa As String = ""
+        If dt.Rows.Count > 0 Then
+            For i As Integer = 0 To dt.Rows.Count - 1 Step +1
+                compa = dt.Rows(i)(0).ToString
+                If compa.Equals(pperiodo) Then
+                    saber = True
+                End If
+            Next
+        End If
+        con.Close()
+        Return saber
+    End Function
 
     Public Shared Function getNombres() As DataTable
         Dim con As MySqlConnection = conexion.conection()
