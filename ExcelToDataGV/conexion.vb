@@ -1,5 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
-
+'Agregar los meses en cada periodo y crear un archivo PDf al final
 Public Class conexion
     Public Shared Function conection() As MySqlConnection
         Dim db As MySqlConnectionStringBuilder = New MySqlConnectionStringBuilder()
