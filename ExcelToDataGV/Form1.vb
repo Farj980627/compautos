@@ -8,11 +8,10 @@ Public Class Compautos
     Dim excel As String
     Dim openFile As New OpenFileDialog
     Public Shared mesInicio, mesFin, yearInicio, yearFinal, nombre, periodo As String
-
     'Mostrar el Excel en el dataGrid
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
-            openFile.InitialDirectory = "C:\Users\Abisai\Downloads"
+            openFile.InitialDirectory = "C:\"
             openFile.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm"
             If openFile.ShowDialog(Me) = System.Windows.Forms.DialogResult.OK Then
                 Dim fi As New IO.FileInfo(openFile.FileName)
@@ -38,14 +37,11 @@ Public Class Compautos
             conn.Close()
         End Try
     End Sub
-
-
     'Insertar el archivo de Excel en la Base de datos
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
             Dim a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51 As String
             periodo = dtExcel.Rows(1).Cells(0).Value.ToString
-
             If conexion.comparar(periodo).Equals(True) Then
                 MsgBox("El Periodo ya esta registrado, favor de corregir")
             Else
