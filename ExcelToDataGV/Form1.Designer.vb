@@ -50,6 +50,7 @@ Partial Class Compautos
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -387,12 +388,24 @@ Partial Class Compautos
         Me.lblCodigo.Text = "Codigo "
         Me.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Button4
+        '
+        Me.Button4.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.Black
+        Me.Button4.Location = New System.Drawing.Point(675, 476)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(318, 38)
+        Me.Button4.TabIndex = 9
+        Me.Button4.Text = "Ver Detalles Avanzados"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'Compautos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1703, 957)
+        Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cbNombre)
@@ -438,4 +451,5 @@ Partial Class Compautos
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
+    Friend WithEvents Button4 As Button
 End Class

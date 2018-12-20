@@ -3,9 +3,9 @@
 Public Class conexion
     Public Shared Function conection() As MySqlConnection
         Dim db As MySqlConnectionStringBuilder = New MySqlConnectionStringBuilder()
-        db.Server = "192.168.5.16"
-        db.UserID = "nomina"
-        db.Password = "12345678"
+        db.Server = "localhost"
+        db.UserID = "root"
+        db.Password = "rootroot"
         db.Database = "nominas"
         db.SslMode = MySqlSslMode.None
         Dim con As MySqlConnection = New MySqlConnection(db.ToString())

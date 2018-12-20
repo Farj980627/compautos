@@ -7,7 +7,19 @@ Public Class Compautos
     Dim datos As DataSet
     Dim excel As String
     Dim openFile As New OpenFileDialog
-    Public Shared mesInicio, mesFin, yearInicio, yearFinal, nombre, periodo As String
+    Public Shared mesInicio, mesFin, yearInicio, yearFinal, nombre, periodo, codigo, totalDias, totalProm As String
+
+    Private Sub cbNombre_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbNombre.SelectedIndexChanged
+        TableLayoutPanel2.Hide()
+        Button4.Hide()
+
+    End Sub
+
+    Public Shared newDt As New DataTable
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        Form2.ShowDialog()
+    End Sub
     'Mostrar el Excel en el dataGrid
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Try
@@ -109,6 +121,7 @@ Public Class Compautos
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TableLayoutPanel2.Hide()
+        Button4.Hide()
         Me.Location = Screen.PrimaryScreen.WorkingArea.Location
         Me.Size = Screen.PrimaryScreen.WorkingArea.Size
         cbNombre.DataSource = conexion.getNombres
@@ -139,7 +152,7 @@ Public Class Compautos
                 Next
                 yearInicio = cbAñoInicial.Text
                 yearFinal = cbAñoFinal.Text
-                Dim newDt As New DataTable
+
                 Dim ColSuma As New Data.DataColumn("Suma", GetType(System.String))
                 Dim ColProm As New Data.DataColumn("Promedio", GetType(System.String))
                 newDt = conexion.getCampos.Copy()
@@ -159,6 +172,7 @@ Public Class Compautos
                     End While
                     newDt.Rows(i)("Suma") = suma
                     newDt.Rows(i)("Promedio") = Math.Round(suma / Double.Parse(conexion.getCampos(i)(4)), 2)
+                    codigo = newDt.Rows(0)(1)
                     suma = 0
                     contador = 0
                 Next
@@ -175,8 +189,11 @@ Public Class Compautos
                 lblPercepciones.Text = Format(sumaTotal, "$ ##,##0.00")
                 lblDias.Text = diasTotales & " " & "Dias"
                 lblPromedio.Text = Format(promFinal, "$ ##,##0.00")
+                totalDias = diasTotales
+                totalProm = promFinal
                 dtExcel.Hide()
                 TableLayoutPanel2.Show()
+                Button4.Show()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
