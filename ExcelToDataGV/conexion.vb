@@ -46,6 +46,22 @@ Public Class conexion
         con.Close()
         Return dt
     End Function
+    Public Shared Function getCampos2() As DataTable
+        Dim con As MySqlConnection = conexion.conection()
+        Dim dt As DataTable = New DataTable()
+        Dim periodoActual, nombre As String
+        periodoActual = Compautos.mesInicio & Compautos.yearInicio
+        nombre = Compautos.nombre
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("SELECT periodo,codigo,nombre, departamento,
+                diasTrabajados,sueldo,otrasPercepciones,compensasion,destajos, destajo, comisiones, vacacionesTiempo,
+                vacacionesReportadas, comisionSeminuevos, comisionUsados, comisionAltaGama, comisionProshop, comisionSicrea,
+                comisionRefacciones, comisionServicio, comisionHyP, bonificacion FROM compautos_nomina
+                where periodo='" + periodoActual + "' and nombre = '" + nombre + "'"), con)
+        Dim adap As New MySqlDataAdapter(cmd)
+        adap.Fill(dt)
+        con.Close()
+        Return dt
+    End Function
     Public Shared Function getCampos() As DataTable
         Dim con As MySqlConnection = conexion.conection()
         Dim dt As DataTable = New DataTable()
