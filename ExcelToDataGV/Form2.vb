@@ -1,11 +1,7 @@
 ﻿Imports itextsharp.text.pdf
 Imports itextsharp.text
 Imports System.IO
-
-
-
 Public Class Form2
-
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim dtFinal As New DataTable
         dtFinal = Compautos.newDt.Copy()
@@ -34,31 +30,25 @@ Public Class Form2
         dGV1.Columns(0).HeaderText = "Periodo"
         dGV1.Columns(1).Name = "Dias"
         dGV1.Columns(0).Name = "Periodo"
-
         lblCodigo.Text = Compautos.codigo
         lblNombre.Text = Compautos.nombre
-
         lblDias.Text = "Total de Dias: " & Compautos.totalDias
-        lblPromedio.Text = "Promedio total: " & Compautos.totalProm
+        lblPromedio.Text = "Promedio total: $" & Compautos.totalProm
     End Sub
-
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Me.Close()
-
     End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-
-
-
-
         Dim s As String = Compautos.codigo & " " & Compautos.nombre
-
         Dim doc As Document = New Document(PageSize.LETTER)
-        Dim writer As PdfWriter = PdfAWriter.GetInstance(doc, New System.IO.FileStream("C:\Users\Abisai\Desktop\" & s & ".pdf", System.IO.FileMode.Create))
+        Dim writer As PdfWriter = PdfWriter.GetInstance(doc, New System.IO.FileStream("C:\Users\Abisai\Desktop\" & s & ".pdf", System.IO.FileMode.Create))
         doc.AddTitle("Informacion " & s)
         doc.AddCreator("compautos")
         doc.Open()
+        doc.Add(New Paragraph("                      COMPAUTOS     Resumen "))
+        doc.Add(Chunk.NEWLINE)
+        doc.Add(Chunk.NEWLINE)
+        doc.Add(Chunk.NEWLINE)
         doc.Add(New Paragraph(Compautos.codigo & "           " & Compautos.nombre))
         doc.Add(Chunk.NEWLINE)
         Dim _standardFont As iTextSharp.text.Font = New iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.HELVETICA, 48, iTextSharp.text.Font.ITALIC, BaseColor.BLUE)
@@ -70,9 +60,7 @@ Public Class Form2
             cell.BorderWidth = 0
             cell.Colspan = 1
             table.AddCell(cell)
-
         Next
-
         For i As Integer = 0 To dGV1.Rows.Count - 2 Step +1
             For j As Integer = 0 To dGV1.Columns.Count - 1 Step +1
                 Dim cell As PdfPCell = New PdfPCell()
@@ -86,11 +74,9 @@ Public Class Form2
         doc.Add(Chunk.NEWLINE)
         doc.Add(Chunk.NEWLINE)
         doc.Add(Chunk.NEWLINE)
-        doc.Add(New Paragraph("Dias Totales :" & Compautos.totalDias & "                   " & "Promedio General: " & Compautos.totalProm))
-
+        doc.Add(New Paragraph("Dias Totales :" & Compautos.totalDias & "                   " & "Promedio General: $" & Compautos.totalProm))
         doc.Close()
         writer.Close()
-
         MessageBox.Show("¡PDF generado correctamente!")
     End Sub
 End Class
