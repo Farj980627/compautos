@@ -1,7 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class conexion
-    'Establece la conexion con MySql
     Public Shared Function conection() As MySqlConnection
         Dim db As MySqlConnectionStringBuilder = New MySqlConnectionStringBuilder()
         db.Server = "localhost"
@@ -13,15 +12,12 @@ Public Class conexion
         con.Open()
         Return con
     End Function
-    'Inserta los valores del archivo de excel previamente cargado en la base de datos
     Public Shared Sub addvalue(ByVal p1 As String, p2 As String, p3 As String, p4 As String, p5 As String, p6 As String, p7 As String, p8 As String, p9 As String, p10 As String, p11 As String, p12 As String, p13 As String, p14 As String, p15 As String, p16 As String, p17 As String, p18 As String, p19 As String, p20 As String, p21 As String, p22 As String, p23 As String, p24 As String, p25 As String, p26 As String, p27 As String, p28 As String, p29 As String, p30 As String, p31 As String, p32 As String, p33 As String, p34 As String, p35 As String, p36 As String, p37 As String, p38 As String, p39 As String, p40 As String, p41 As String, p42 As String, p43 As String, p44 As String, p45 As String, p46 As String, p47 As String, p48 As String, p49 As String, p50 As String, p51 As String)
         Dim con As MySqlConnection = conexion.conection()
         Dim cmd As MySqlCommand = New MySqlCommand(String.Format("insert  into compautos_nomina values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}', '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', '{19}', '{20}', '{21}', '{22}', '{23}', '{24}', '{25}', '{26}', '{27}', '{28}', '{29}', '{30}', '{31}', '{32}', '{33}', '{34}', '{35}', '{36}', '{37}', '{38}', '{39}', '{40}', '{41}', '{42}', '{43}', '{44}', '{45}', '{46}', '{47}', '{48}', '{49}', '{50}') ", p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20, p21, p22, p23, p24, p25, p26, p27, p28, p29, p30, p31, p32, p33, p34, p35, p36, p37, p38, p39, p40, p41, p42, p43, p44, p45, p46, p47, p48, p49, p50, p51), con)
         cmd.ExecuteNonQuery()
         con.Close()
     End Sub
-    'Obtiene una lista de los periodos que ya estan registrados en la base de datos y la compara con el
-    'que se quiere insertar, para evitar insertar dos veces el mismo periodo
     Public Shared Function comparar(pperiodo) As Boolean
         Dim con As MySqlConnection = conexion.conection()
         Dim cmd As MySqlCommand = New MySqlCommand(String.Format("select distinct periodo from compautos_nomina"), con)
@@ -41,7 +37,6 @@ Public Class conexion
         con.Close()
         Return saber
     End Function
-    'Obtiene la lista con todos los nombres diferentes que estan registrados en la base de datos
     Public Shared Function getNombres() As DataTable
         Dim con As MySqlConnection = conexion.conection()
         Dim dt As New DataTable()
@@ -51,7 +46,6 @@ Public Class conexion
         con.Close()
         Return dt
     End Function
-    'Obtiene todos los campos que se van a sumar, cuando se trata de un periodo en especifico
     Public Shared Function getCampos2() As DataTable
         Dim con As MySqlConnection = conexion.conection()
         Dim dt As DataTable = New DataTable()
@@ -68,7 +62,6 @@ Public Class conexion
         con.Close()
         Return dt
     End Function
-    'Obtiene todos los campos que se van a sumar cuando se le da un intervalo de periodos
     Public Shared Function getCampos() As DataTable
         Dim con As MySqlConnection = conexion.conection()
         Dim dt As DataTable = New DataTable()

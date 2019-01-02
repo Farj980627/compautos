@@ -32,7 +32,7 @@ Public Class Form2
         dGV1.Columns(0).Name = "Periodo"
         lblCodigo.Text = Compautos.codigo
         lblNombre.Text = Compautos.nombre
-        lblDias.Text = "Total de Dias: " & Compautos.totalDias
+        lblDias.Text = "Total de Días: " & Compautos.totalDias
         lblPromedio.Text = "Promedio total: $" & Compautos.totalProm
     End Sub
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
