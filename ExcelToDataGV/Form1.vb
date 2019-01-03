@@ -42,11 +42,12 @@ Public Class Compautos
                 End If
                 MsgBox("Archivo Cargado Correctamente")
                 MsgBox("Favor de checar que no existan renglones sin datos al final del archivo")
+                Button4.Hide()
 
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
-            conn.Close()
+        conn.Close()
         End Try
     End Sub
     'Insertar el archivo de Excel en la Base de datos
