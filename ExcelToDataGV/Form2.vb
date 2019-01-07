@@ -41,7 +41,8 @@ Public Class Form2
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim s As String = Compautos.codigo & " " & Compautos.nombre
         Dim doc As Document = New Document(PageSize.LETTER)
-        Dim writer As PdfWriter = PdfWriter.GetInstance(doc, New System.IO.FileStream("C:\Users\Abisai\Desktop\" & s & ".pdf", System.IO.FileMode.Create))
+        Dim user As String = Environment.UserName
+        Dim writer As PdfWriter = PdfWriter.GetInstance(doc, New System.IO.FileStream("C:\Users\" & user & "\Desktop\" & s & ".pdf", System.IO.FileMode.Create))
         doc.AddTitle("Informacion " & s)
         doc.AddCreator("compautos")
         doc.Open()
