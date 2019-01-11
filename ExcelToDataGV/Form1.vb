@@ -53,7 +53,7 @@ Public Class Compautos
     'Insertar el archivo de Excel en la Base de datos
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Try
-            Dim a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51 As String
+            Dim a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26 As String
             periodo = dtExcel.Rows(1).Cells(0).Value.ToString
             If conexion.comparar(periodo).Equals(True) Then
                 MsgBox("El Periodo ya esta registrado, favor de corregir")
@@ -85,32 +85,8 @@ Public Class Compautos
                     a24 = dtExcel.Rows(i).Cells(23).Value.ToString()
                     a25 = dtExcel.Rows(i).Cells(24).Value.ToString()
                     a26 = dtExcel.Rows(i).Cells(25).Value.ToString()
-                    a27 = dtExcel.Rows(i).Cells(26).Value.ToString()
-                    a28 = dtExcel.Rows(i).Cells(27).Value.ToString()
-                    a29 = dtExcel.Rows(i).Cells(28).Value.ToString()
-                    a30 = dtExcel.Rows(i).Cells(29).Value.ToString()
-                    a31 = dtExcel.Rows(i).Cells(30).Value.ToString()
-                    a32 = dtExcel.Rows(i).Cells(31).Value.ToString()
-                    a33 = dtExcel.Rows(i).Cells(32).Value.ToString()
-                    a34 = dtExcel.Rows(i).Cells(33).Value.ToString()
-                    a35 = dtExcel.Rows(i).Cells(34).Value.ToString()
-                    a36 = dtExcel.Rows(i).Cells(35).Value.ToString()
-                    a37 = dtExcel.Rows(i).Cells(36).Value.ToString()
-                    a38 = dtExcel.Rows(i).Cells(37).Value.ToString()
-                    a39 = dtExcel.Rows(i).Cells(38).Value.ToString()
-                    a40 = dtExcel.Rows(i).Cells(39).Value.ToString()
-                    a41 = dtExcel.Rows(i).Cells(40).Value.ToString()
-                    a42 = dtExcel.Rows(i).Cells(41).Value.ToString()
-                    a43 = dtExcel.Rows(i).Cells(42).Value.ToString()
-                    a44 = dtExcel.Rows(i).Cells(43).Value.ToString()
-                    a45 = dtExcel.Rows(i).Cells(44).Value.ToString()
-                    a46 = dtExcel.Rows(i).Cells(45).Value.ToString()
-                    a47 = dtExcel.Rows(i).Cells(46).Value.ToString()
-                    a48 = dtExcel.Rows(i).Cells(47).Value.ToString()
-                    a49 = dtExcel.Rows(i).Cells(48).Value.ToString()
-                    a50 = dtExcel.Rows(i).Cells(49).Value.ToString()
-                    a51 = dtExcel.Rows(i).Cells(50).Value.ToString()
-                    conexion.addvalue(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26, a27, a28, a29, a30, a31, a32, a33, a34, a35, a36, a37, a38, a39, a40, a41, a42, a43, a44, a45, a46, a47, a48, a49, a50, a51)
+
+                    conexion.addvalue(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20, a21, a22, a23, a24, a25, a26)
                 Next
                 MsgBox("Datos insertados correctamente")
                 cbNombre.DataSource = conexion.getNombres
