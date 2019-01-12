@@ -9,6 +9,11 @@ Public Class Compautos
     Dim openFile As New OpenFileDialog
     Public Shared mesInicio, mesFin, yearInicio, yearFinal, nombre, periodo, codigo, totalDias, totalProm As String
 
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Form3.ShowDialog()
+
+    End Sub
+
     Private Sub cbNombre_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbNombre.SelectedIndexChanged
         TableLayoutPanel2.Hide()
         Button4.Hide()
@@ -99,6 +104,7 @@ Public Class Compautos
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TableLayoutPanel2.Hide()
         Button4.Hide()
+        Button5.Hide()
         Me.Location = Screen.PrimaryScreen.WorkingArea.Location
         Me.Size = Screen.PrimaryScreen.WorkingArea.Size
         cbNombre.DataSource = conexion.getNombres
@@ -114,7 +120,7 @@ Public Class Compautos
             ElseIf cbMesInicial.Text = "" Or cbAñoInicial.Text = "" Or cbMesFinal.Text = "" Or cbAñoFinal.Text = "" Then
                 MsgBox("Faltan datos para realizar la busqueda ")
             ElseIf cbMesInicial.SelectedIndex = cbMesFinal.SelectedIndex And cbAñoInicial.SelectedIndex = cbAñoFinal.SelectedIndex Then
-
+                'Obtener las parametros para realizar la consulta
                 nombre = cbNombre.Text
                 If cbMesInicial.SelectedIndex >= 9 Then
                     mesInicio = cbMesInicial.SelectedIndex + 1
@@ -163,7 +169,7 @@ Public Class Compautos
                 dtExcel.Hide()
                 TableLayoutPanel2.Show()
                 Button4.Show()
-
+                Button5.Show()
             Else
                 nombre = cbNombre.Text
                 For w As Integer = 0 To cbMesInicial.SelectedIndex Step +1
@@ -222,6 +228,7 @@ Public Class Compautos
                 dtExcel.Hide()
                 TableLayoutPanel2.Show()
                 Button4.Show()
+                Button5.Show()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

@@ -22,13 +22,11 @@ Partial Class Compautos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Compautos))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Compautos))
         Me.dtExcel = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.cbAñoFinal = New System.Windows.Forms.ComboBox()
         Me.cbMesFinal = New System.Windows.Forms.ComboBox()
@@ -36,7 +34,6 @@ Partial Class Compautos
         Me.cbMesInicial = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.cbNombre = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
@@ -50,25 +47,15 @@ Partial Class Compautos
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblCodigo = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(24, 5)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(219, 45)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Abrir Archivo"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'dtExcel
         '
@@ -103,20 +90,6 @@ Partial Class Compautos
         Me.dtExcel.Size = New System.Drawing.Size(1429, 784)
         Me.dtExcel.TabIndex = 1
         '
-        'Button2
-        '
-        Me.Button2.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(276, 5)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(241, 45)
-        Me.Button2.TabIndex = 2
-        Me.Button2.Text = "Guardar Datos"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'TableLayoutPanel1
         '
         Me.TableLayoutPanel1.ColumnCount = 6
@@ -145,7 +118,7 @@ Partial Class Compautos
         Me.cbAñoFinal.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbAñoFinal.ForeColor = System.Drawing.Color.Black
         Me.cbAñoFinal.FormattingEnabled = True
-        Me.cbAñoFinal.Items.AddRange(New Object() {"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"})
+        Me.cbAñoFinal.Items.AddRange(New Object() {"2018", "2019", "2020", "2021"})
         Me.cbAñoFinal.Location = New System.Drawing.Point(693, 3)
         Me.cbAñoFinal.Name = "cbAñoFinal"
         Me.cbAñoFinal.Size = New System.Drawing.Size(136, 31)
@@ -169,7 +142,7 @@ Partial Class Compautos
         Me.cbAñoInicial.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbAñoInicial.ForeColor = System.Drawing.Color.Black
         Me.cbAñoInicial.FormattingEnabled = True
-        Me.cbAñoInicial.Items.AddRange(New Object() {"2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020"})
+        Me.cbAñoInicial.Items.AddRange(New Object() {"2018", "2019", "2020", "2021"})
         Me.cbAñoInicial.Location = New System.Drawing.Point(279, 3)
         Me.cbAñoInicial.Name = "cbAñoInicial"
         Me.cbAñoInicial.Size = New System.Drawing.Size(132, 31)
@@ -210,20 +183,6 @@ Partial Class Compautos
         Me.Label2.Size = New System.Drawing.Size(47, 31)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Fin:"
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(850, 895)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(281, 50)
-        Me.Button3.TabIndex = 5
-        Me.Button3.Text = "Calcular Promedio"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'cbNombre
         '
@@ -397,6 +356,20 @@ Partial Class Compautos
         Me.lblCodigo.Text = "Codigo "
         Me.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'Button5
+        '
+        Me.Button5.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.ForeColor = System.Drawing.Color.Black
+        Me.Button5.Image = CType(resources.GetObject("Button5.Image"), System.Drawing.Image)
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(1013, 475)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(318, 47)
+        Me.Button5.TabIndex = 10
+        Me.Button5.Text = "Calcular Descuentos"
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -411,12 +384,55 @@ Partial Class Compautos
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.Black
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(850, 895)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(281, 50)
+        Me.Button3.TabIndex = 5
+        Me.Button3.Text = "Calcular Promedio"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(276, 5)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(241, 45)
+        Me.Button2.TabIndex = 2
+        Me.Button2.Text = "Guardar Datos"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(24, 5)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(219, 45)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "Abrir Archivo"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Compautos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1703, 957)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.TableLayoutPanel2)
         Me.Controls.Add(Me.Label3)
@@ -465,4 +481,5 @@ Partial Class Compautos
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
 End Class
