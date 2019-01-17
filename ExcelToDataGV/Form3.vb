@@ -12,6 +12,7 @@
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        txtFaltas.Text = ""
         Me.Close()
     End Sub
 
@@ -22,5 +23,6 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         lblDescuento.Text = ((Double.Parse(txtFaltas.Text)) * (Double.Parse(lblPromedioNum.Text))) - ((Double.Parse(lblSueldoNum.Text) * (Double.Parse(txtFaltas.Text))))
         lblDescuento.Show()
+
     End Sub
 End Class

@@ -28,8 +28,10 @@ Public Class Form2
         dGV1.DataSource = dtFinal
         dGV1.Columns(1).HeaderText = "Dias"
         dGV1.Columns(0).HeaderText = "Periodo"
+        dGV1.Columns(2).HeaderText = "Sueldo Diario"
         dGV1.Columns(1).Name = "Dias"
         dGV1.Columns(0).Name = "Periodo"
+        dGV1.Columns(2).Name = "Sueldo Diario"
         lblCodigo.Text = Compautos.codigo
         lblNombre.Text = Compautos.nombre
         lblDias.Text = "Total de Días: " & Compautos.totalDias

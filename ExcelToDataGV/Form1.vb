@@ -17,6 +17,7 @@ Public Class Compautos
     Private Sub cbNombre_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbNombre.SelectedIndexChanged
         TableLayoutPanel2.Hide()
         Button4.Hide()
+        Button5.Hide()
 
     End Sub
 
