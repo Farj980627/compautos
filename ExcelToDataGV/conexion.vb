@@ -60,7 +60,7 @@ Public Class conexion
         Dim cmd As MySqlCommand = New MySqlCommand(String.Format("SELECT periodo,codigo,nombre, departamento,
                 diasTrabajados,sueldo,otrasPercepciones,compensasion,destajos, destajo, comisiones, vacacionesTiempo,
                 vacacionesReportadas, comisionSeminuevos, comisionUsados, comisionAltaGama, comisionProshop, comisionSicrea,
-                comisionRefacciones, comisionServicio, comisionHyP, bonificacion FROM compautos_nomina
+                comisionRefacciones, comisionServicio, comisionHyP, bonificacion, sueldoDiario FROM compautos_nomina
                 where periodo='" + periodoActual + "' and nombre = '" + nombre + "'"), con)
         Dim adap As New MySqlDataAdapter(cmd)
         adap.Fill(dt)

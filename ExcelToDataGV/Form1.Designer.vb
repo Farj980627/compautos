@@ -52,6 +52,8 @@ Partial Class Compautos
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.txtnuevo = New System.Windows.Forms.TextBox()
+        Me.Button6 = New System.Windows.Forms.Button()
         CType(Me.dtExcel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -426,12 +428,38 @@ Partial Class Compautos
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'txtnuevo
+        '
+        Me.txtnuevo.BackColor = System.Drawing.Color.White
+        Me.txtnuevo.Font = New System.Drawing.Font("Lucida Fax", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtnuevo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.txtnuevo.Location = New System.Drawing.Point(1286, 841)
+        Me.txtnuevo.Name = "txtnuevo"
+        Me.txtnuevo.Size = New System.Drawing.Size(167, 43)
+        Me.txtnuevo.TabIndex = 22
+        '
+        'Button6
+        '
+        Me.Button6.Font = New System.Drawing.Font("Lucida Fax", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.Color.Black
+        Me.Button6.Image = CType(resources.GetObject("Button6.Image"), System.Drawing.Image)
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.Location = New System.Drawing.Point(1286, 893)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(167, 50)
+        Me.Button6.TabIndex = 23
+        Me.Button6.Text = "Añadir Año"
+        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Compautos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(24, Byte), Integer), CType(CType(34, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1703, 957)
+        Me.ClientSize = New System.Drawing.Size(1677, 957)
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.txtnuevo)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.TableLayoutPanel2)
@@ -482,4 +510,6 @@ Partial Class Compautos
     Friend WithEvents Label8 As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
+    Friend WithEvents txtnuevo As TextBox
+    Friend WithEvents Button6 As Button
 End Class

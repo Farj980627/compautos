@@ -21,7 +21,8 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        lblDescuento.Text = ((Double.Parse(txtFaltas.Text)) * (Double.Parse(lblPromedioNum.Text))) - ((Double.Parse(lblSueldoNum.Text) * (Double.Parse(txtFaltas.Text))))
+        lblDescuento.Text = Math.Round(((Double.Parse(txtFaltas.Text)) * (Double.Parse(lblPromedioNum.Text))) - ((Double.Parse(lblSueldoNum.Text) * (Double.Parse(txtFaltas.Text)))), 2)
+
         lblDescuento.Show()
 
     End Sub

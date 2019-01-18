@@ -9,6 +9,17 @@ Public Class Compautos
     Dim openFile As New OpenFileDialog
     Public Shared mesInicio, mesFin, yearInicio, yearFinal, nombre, periodo, codigo, totalDias, totalProm As String
 
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim currentIndex As Integer = cbAñoFinal.Items.Count
+        Dim currentYear As String = cbAñoFinal.Items(currentIndex - 1).ToString
+        Dim newYear As Integer
+        newYear = currentYear + 1
+        cbAñoFinal.Items.Add(newYear)
+        cbAñoInicial.Items.Add(newYear)
+
+
+    End Sub
+
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Form3.ShowDialog()
 
@@ -49,7 +60,7 @@ Public Class Compautos
                 MsgBox("Archivo Cargado Correctamente")
                 MsgBox("Favor de checar que no existan renglones sin datos al final del archivo")
                 Button4.Hide()
-
+                Button5.Hide()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -120,8 +131,9 @@ Public Class Compautos
                 MsgBox("El mes final es menor que el inicial. ")
             ElseIf cbMesInicial.Text = "" Or cbAñoInicial.Text = "" Or cbMesFinal.Text = "" Or cbAñoFinal.Text = "" Then
                 MsgBox("Faltan datos para realizar la busqueda ")
+                'Busqueda para un mes y año iguales
             ElseIf cbMesInicial.SelectedIndex = cbMesFinal.SelectedIndex And cbAñoInicial.SelectedIndex = cbAñoFinal.SelectedIndex Then
-                'Obtener las parametros para realizar la consulta
+
                 nombre = cbNombre.Text
                 If cbMesInicial.SelectedIndex >= 9 Then
                     mesInicio = cbMesInicial.SelectedIndex + 1
@@ -142,7 +154,7 @@ Public Class Compautos
                 For i As Integer = 0 To newDt.Rows.Count - 1 Step +1
                     contador = 5
                     dtExcel.DataSource = newDt
-                    While contador < newDt.Columns.Count - 2
+                    While contador < newDt.Columns.Count - 3
                         suma = suma + Double.Parse(newDt(i)(contador))
                         contador = contador + 1
                     End While
@@ -172,6 +184,7 @@ Public Class Compautos
                 Button4.Show()
                 Button5.Show()
             Else
+                'busqueda mes y año diferentes
                 nombre = cbNombre.Text
                 For w As Integer = 0 To cbMesInicial.SelectedIndex Step +1
                     mesInicio = "0" & w + 1
@@ -201,7 +214,7 @@ Public Class Compautos
                 For i As Integer = 0 To newDt.Rows.Count - 1 Step +1
                     contador = 5
                     dtExcel.DataSource = newDt
-                    While contador < newDt.Columns.Count - 2
+                    While contador < newDt.Columns.Count - 3
                         suma = suma + Double.Parse(newDt(i)(contador))
                         contador = contador + 1
                     End While
