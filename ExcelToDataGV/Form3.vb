@@ -6,7 +6,7 @@
         lblCodigo.Text = Compautos.codigo
         lblNombre.Text = Compautos.nombre
         lblDepartamento.Text = dtFinal(0)("departamento").ToString
-        lblSueldoNum.Text = dtFinal(0)("sueldoDiario").ToString
+        lblSueldoNum.Text = conexion.getLastSueldo
         lblPromedioNum.Text = Compautos.totalProm
 
     End Sub

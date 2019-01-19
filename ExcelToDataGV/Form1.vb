@@ -162,7 +162,7 @@ Public Class Compautos
                 For i As Integer = 0 To newDt.Rows.Count - 1 Step +1
                     contador = 5
                     dtExcel.DataSource = newDt
-                    While contador < newDt.Columns.Count - 3
+                    While contador < newDt.Columns.Count - 2
                         suma = suma + Double.Parse(newDt(i)(contador))
                         contador = contador + 1
                     End While
@@ -222,7 +222,7 @@ Public Class Compautos
                 For i As Integer = 0 To newDt.Rows.Count - 1 Step +1
                     contador = 5
                     dtExcel.DataSource = newDt
-                    While contador < newDt.Columns.Count - 3
+                    While contador < newDt.Columns.Count - 2
                         suma = suma + Double.Parse(newDt(i)(contador))
                         contador = contador + 1
                     End While

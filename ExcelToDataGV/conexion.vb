@@ -60,12 +60,27 @@ Public Class conexion
         Dim cmd As MySqlCommand = New MySqlCommand(String.Format("SELECT periodo,codigo,nombre, departamento,
                 diasTrabajados,sueldo,otrasPercepciones,compensasion,destajos, destajo, comisiones, vacacionesTiempo,
                 vacacionesReportadas, comisionSeminuevos, comisionUsados, comisionAltaGama, comisionProshop, comisionSicrea,
-                comisionRefacciones, comisionServicio, comisionHyP, bonificacion, sueldoDiario FROM compautos_nomina
+                comisionRefacciones, comisionServicio, comisionHyP, bonificacion FROM compautos_nomina
                 where periodo='" + periodoActual + "' and nombre = '" + nombre + "'"), con)
         Dim adap As New MySqlDataAdapter(cmd)
         adap.Fill(dt)
         con.Close()
         Return dt
+    End Function
+    Public Shared Function getLastSueldo() As String
+        Dim nombre As String = ""
+        Dim lastSueldo As String = ""
+        Dim periodo As String = Compautos.mesFin & Compautos.yearFinal
+        nombre = Compautos.nombre
+        Dim con As MySqlConnection = conexion.conection
+        Dim cmd As MySqlCommand = New MySqlCommand(String.Format("select sueldoDiario from compautos_nomina where nombre ='" + nombre + "' and periodo='" + periodo + "'  ORDER by periodo desc LIMIT 1"), con)
+        Dim reader As MySqlDataReader = cmd.ExecuteReader
+        If reader.Read() Then
+            lastSueldo = reader(0).ToString()
+        End If
+        con.Close()
+        Return lastSueldo
+
     End Function
     'ALgoritmo para las demas busquedas
     Public Shared Function getCampos() As DataTable
@@ -95,7 +110,7 @@ Public Class conexion
             Dim cmd As MySqlCommand = New MySqlCommand(String.Format("SELECT periodo,codigo,nombre, departamento,
                 diasTrabajados,sueldo,otrasPercepciones,compensasion,destajos, destajo, comisiones, vacacionesTiempo,
                 vacacionesReportadas, comisionSeminuevos, comisionUsados, comisionAltaGama, comisionProshop, comisionSicrea,
-                comisionRefacciones, comisionServicio, comisionHyP, bonificacion, sueldoDiario FROM compautos_nomina
+                comisionRefacciones, comisionServicio, comisionHyP, bonificacion FROM compautos_nomina
                 where periodo='" + periodoActual + "' and nombre = '" + nombre + "'"), con)
             Dim adap As New MySqlDataAdapter(cmd)
             adap.Fill(dt)
@@ -104,4 +119,5 @@ Public Class conexion
         con.Close()
         Return dt
     End Function
+
 End Class
