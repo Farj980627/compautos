@@ -12,11 +12,15 @@ Public Class Compautos
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Dim currentIndex As Integer = cbAñoFinal.Items.Count
         Dim currentYear As String = cbAñoFinal.Items(currentIndex - 1).ToString
-        Dim newYear As Integer
+        Dim newYear As String
         newYear = currentYear + 1
         cbAñoFinal.Items.Add(newYear)
-        cbAñoInicial.Items.Add(newYear)
-
+        My.Settings.years.Clear()
+        For Each item In cbAñoFinal.Items
+            My.Settings.years.Add(item.ToString)
+        Next
+        My.Settings.Save()
+        MsgBox("Año Agregado Correctamente")
 
     End Sub
 
@@ -64,7 +68,7 @@ Public Class Compautos
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
-        conn.Close()
+            conn.Close()
         End Try
     End Sub
     'Insertar el archivo de Excel en la Base de datos
@@ -114,6 +118,10 @@ Public Class Compautos
         End Try
     End Sub
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        For Each i As String In My.Settings.years
+            cbAñoFinal.Items.Add(i)
+            cbAñoInicial.Items.Add(i)
+        Next
         TableLayoutPanel2.Hide()
         Button4.Hide()
         Button5.Hide()
